@@ -9,20 +9,47 @@ class cityRepository{
             return city;
             
         } catch (error) {
+            console.log("something went wrong in the repository");
             throw {error};
         }
     }
 
     async deletecity(cityid){
+        try{
+            await City.destroy({
+                where: {
+                  id: cityid
+                }
+              });
+        }catch (error) {
+            console.log("something went wrong in the repository");
+            throw {error};
+        }
+    }
+
+    async updatecity(cityid , data){
         try {
 
-            await City.destory({
+            const city = await City.update(data , {
                 where : {
-                    id:cityid
+                    id : cityid
                 }
-            })
+            });
+
+            return city;
             
         } catch (error) {
+            console.log("something went wrong in the repository");
+            throw {error};
+        }
+    }
+
+    async getcity(cityid){
+        try {
+            const city = await City.findByPk(cityid);
+            return city;
+        } catch (error) {
+            console.log("something went wrong in the repository");
             throw {error};
         }
     }
