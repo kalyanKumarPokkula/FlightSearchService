@@ -1,11 +1,15 @@
+const { Op } = require('sequelize');
+
 const { City } = require("../models/index");
 
 class cityRepository{
 
-    async createcity({ name }){
+    async createCity({ name }){
         try {
 
-            const city =  await City.create({name});
+            const city = await City.create({
+                name
+            });
             return city;
             
         } catch (error) {
@@ -14,7 +18,7 @@ class cityRepository{
         }
     }
 
-    async deletecity(cityid){
+    async deleteCity(cityid){
         try{
             await City.destroy({
                 where: {
@@ -27,7 +31,7 @@ class cityRepository{
         }
     }
 
-    async updatecity(cityid , data){
+    async updateCity(cityid , data){
         try {
 
             const city = await City.update(data , {
@@ -44,7 +48,7 @@ class cityRepository{
         }
     }
 
-    async getcity(cityid){
+    async getCity(cityid){
         try {
             const city = await City.findByPk(cityid);
             return city;

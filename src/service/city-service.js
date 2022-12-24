@@ -9,7 +9,7 @@ class CityService{
 
     async createCity(data){
         try {
-            const response = await this.CityRepository.createcity(data);
+            const response = await this.CityRepository.createCity(data);
             return response;
         } catch (error) {
             console.log("something went wrong in the service");
@@ -20,7 +20,7 @@ class CityService{
     async deleteCity(data){
 
         try {
-            const response = await this.CityRepository.deletecity(data);
+            const response = await this.CityRepository.deleteCity(data);
             return response;
         } catch (error) {
             console.log("something went wrong in the service");
@@ -30,7 +30,7 @@ class CityService{
 
     async updateCity(cityid ,data){
         try {
-            const response = await this.CityRepository.updatecity(cityid ,data);
+            const response = await this.CityRepository.updateCity(cityid ,data);
             return response;
         } catch (error) {
             console.log("something went wrong in the service");

@@ -1,7 +1,10 @@
 const express = require("express");
-const boby_parser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const { PORT } = require("./config/serverconfig");
+const ApiRoutes = require("./routes/index");
+
+
 
 
 const setupserverandstart = async () =>{
@@ -9,8 +12,15 @@ const setupserverandstart = async () =>{
     // create a express object
     let app = express();
 
-    app.use(boby_parser.json());
-    app.use(boby_parser.urlencoded({extended : true}));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+
+
+    app.use('/api' , ApiRoutes);
+
+
+
+
 
     app.listen(PORT , async () =>{
         console.log(`server started at ${PORT}`);
