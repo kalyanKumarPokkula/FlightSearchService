@@ -45,6 +45,7 @@ const destroy = async (req, res) => {
 // GET -> /city/:id
 const get = async (req, res) => {
     try {
+        console.log(req.params);
         const response = await cityService.getCity(req.params.id);
         return res.status(200).json({
             data: response,

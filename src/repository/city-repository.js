@@ -50,13 +50,19 @@ class cityRepository{
 
     async getCity(cityid){
         try {
-            const city = await City.findByPk(cityid);
+            const city = await City.findOne({
+                where : {
+                    id : cityid
+                }
+            });
             return city;
         } catch (error) {
             console.log("something went wrong in the repository");
             throw {error};
         }
     }
+
+
 }
 
 
