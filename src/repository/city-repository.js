@@ -82,6 +82,18 @@ class cityRepository{
         }
     }
 
+    async createBulkCities(bulk){
+
+        try {
+            let city = await City.bulkCreate(bulk);
+            return city;
+        } catch (error) {
+            console.log("something went wrong in the repository");
+            throw {error}
+        }
+
+    }
+
 
 }
 

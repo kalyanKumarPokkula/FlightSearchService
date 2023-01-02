@@ -58,6 +58,16 @@ class CityService{
         }
     }
 
+    async createBulkCities(bulk){
+        try {
+            let cities = await this.CityRepository.createBulkCities(bulk);
+            return cities;
+        } catch (error) {
+            console.log("Something went wrong at service layer");
+            throw {error};
+        }
+    }
+
 
 }
 

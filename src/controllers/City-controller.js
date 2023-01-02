@@ -91,7 +91,7 @@ const getAll = async (req, res) => {
         return res.status(200).json({
             data: response,
             success: true,
-            message: 'Successfully fetched a city',
+            message: 'Successfully fetched a cities',
             err: {}
         });
     } catch (error) {
@@ -104,10 +104,31 @@ const getAll = async (req, res) => {
         });
     }
 }
+
+const createBulkCities = async(req , res) =>{
+    try {
+        const response = await cityService.createBulkCities(req.body);
+        return res.status(200).json({
+            data: response,
+            success: true,
+            message: 'Successfully create a cities',
+            err: {}
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: 'Not able to create the cities',
+            err: error
+        });
+    }
+}
 module.exports = {
     create,
     destroy,
     get,
     update,
-    getAll
+    getAll,
+    createBulkCities
 }
