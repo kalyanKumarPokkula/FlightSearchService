@@ -87,7 +87,7 @@ const update = async (req, res) => {
 
 const getAll = async (req, res) => {
     try {
-        const response = await cityService.getAll();
+        const response = await cityService.getAll(req.query);
         return res.status(200).json({
             data: response,
             success: true,
