@@ -49,9 +49,7 @@ const setupserverandstart = async () =>{
         // console.log(airports);
 
         // console.log(city);
-        await Airplane.create({
-            modelNumber : "Bombardier CRJ"
-        })
+        
 
         
 
