@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const { PORT } = require("./config/serverconfig");
 const ApiRoutes = require("./routes/index");
 
-const {Airplane} = require("./models/index")
+const {Airplane} = require("./models/index");
+const {airplaneRepository} = require('./repository/index');
+
 
 
 
@@ -49,6 +51,10 @@ const setupserverandstart = async () =>{
         // console.log(airports);
 
         // console.log(city);
+        const obj = new airplaneRepository();
+        const temp = await obj.getAirplane(1);
+        
+        
         
 
         

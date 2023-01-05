@@ -37,7 +37,14 @@ module.exports = {
         cityId : 4,
         createdAt :new Date(),
         updatedAt : new Date()
+      },
+      {
+        name : 'Warangal Airport',
+        cityId : 4,
+        createdAt :new Date(),
+        updatedAt : new Date()
       }
+      
     ],{})
   },
 
