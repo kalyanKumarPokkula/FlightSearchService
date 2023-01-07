@@ -51,8 +51,6 @@ const setupserverandstart = async () =>{
         // console.log(airports);
 
         // console.log(city);
-        const obj = new airplaneRepository();
-        const temp = await obj.getAirplane(1);
         
         
         

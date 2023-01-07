@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull :false
       },
-      deparureAirportId: {
+      departureAirportId: {
         type: Sequelize.INTEGER,
         allowNull :false
       },
