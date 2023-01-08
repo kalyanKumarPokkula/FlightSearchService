@@ -4,12 +4,6 @@ const bodyParser = require("body-parser");
 const { PORT } = require("./config/serverconfig");
 const ApiRoutes = require("./routes/index");
 
-const {Airplane} = require("./models/index");
-const {airplaneRepository} = require('./repository/index');
-
-
-
-
 
 
 const setupserverandstart = async () =>{
@@ -51,16 +45,7 @@ const setupserverandstart = async () =>{
         // console.log(airports);
 
         // console.log(city);
-        
-        
-        
-
-        
-
-
-        
-
-        
+   
     })
 }
 

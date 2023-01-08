@@ -1,55 +1,60 @@
 const { Airport } = require("../models/index");
+const CrudRepository = require("./crud-repository");
 
 
-class AirportRepository{
+class AirportRepository extends CrudRepository{
 
-    async createAirport(airport){
-        try {
-            let response = await Airport.create(airport);
-            return response;
-        } catch (error) {
-            console.log("something went wrong in the repository");
-            throw {error}
-        }
+    constructor(){
+        super(Airport)
     }
 
-    async deleteAiport(airportId){
-        try {
-            let response = await Airport.destroy({
-                where :{
-                    id : airportId
-                }
-            })
-            return response;
-        } catch (error) {
-            console.log("something went wrong in the repository");
-            throw {error}
-        }
-    }
+    // async createAirport(airport){
+    //     try {
+    //         let response = await Airport.create(airport);
+    //         return response;
+    //     } catch (error) {
+    //         console.log("something went wrong in the repository");
+    //         throw {error}
+    //     }
+    // }
 
-    async updateAirport(airportId , data){
-        try {
-            let response = await Airport.update(data ,{
-                where : {
-                    id : airportId
-                }
-            })
-            return response;
-        } catch (error) {
-            console.log("something went wrong in the repository");
-            throw {error}
-        }
-    }
+    // async deleteAiport(airportId){
+    //     try {
+    //         let response = await Airport.destroy({
+    //             where :{
+    //                 id : airportId
+    //             }
+    //         })
+    //         return response;
+    //     } catch (error) {
+    //         console.log("something went wrong in the repository");
+    //         throw {error}
+    //     }
+    // }
 
-    async getAirport(airportId){
-        try {
-            let response = await Airport.findByPk(airportId);
-            return response;
-        } catch (error) {
-            console.log("something went wrong in the repository");
-            throw {error}
-        }
-    }
+    // async updateAirport(airportId , data){
+    //     try {
+    //         let response = await Airport.update(data ,{
+    //             where : {
+    //                 id : airportId
+    //             }
+    //         })
+    //         return response;
+    //     } catch (error) {
+    //         console.log("something went wrong in the repository");
+    //         throw {error}
+    //     }
+    // }
+
+    // async getAirport(airportId){
+    //     try {
+    //         let response = await Airport.findByPk(airportId);
+    //         return response;
+    //     } catch (error) {
+    //         console.log("something went wrong in the repository");
+    //         throw {error}
+    //     }
+    // }
 }
 
 
